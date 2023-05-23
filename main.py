@@ -1,20 +1,34 @@
-# This is a sample Python script.
+import os
+import subprocess
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Daftar file yang akan dijalankan
+# Mendefinisikan direktori tempat file-file disimpan
+folder = "src"
 
+# Mendapatkan daftar file dalam direktori
+files  = [file for file in os.listdir(folder) if file.endswith('.py') and file != '__init__.py']
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name} {default_job()}')  # Press Ctrl+F8 to toggle the breakpoint.
+# Menampilkan pilihan file
+print("Pilihan file:")
+for i, file in enumerate(files, start=1):
+    # Menghilangkan ekstensi .py
+    file_name = os.path.splitext(file)[0]
+    print(f"{i}. {file_name}")
+print("\n0. Keluar")
+# Meminta input pilihan pengguna
+pilihan = int(input("Masukkan nomor file yang ingin dijalankan: "))
 
-    #create method for default job
-def default_job(job="Data Scientist and Software Engineer"):
-    print("I am a ")
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('Ahmad Alan Lestari')
-
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+try:
+    if pilihan == 0 :
+        print("Terima kasih sudah menggunakan aplikasi ini.")
+        exit()
+    # Menjalankan file terpilih menggunakan subprocess
+    print("\n\n\n")
+    subprocess.run(['python', os.path.join(folder, files[pilihan - 1])])
+except ValueError:
+    print("Nomor file harus berupa angka!")
+except IndexError:
+    print("Nomor file tidak valid!")
+except KeyboardInterrupt:
+    print("Dibatalkan oleh pengguna!")
+os.system('python main.py')
