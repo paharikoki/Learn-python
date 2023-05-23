@@ -6,8 +6,12 @@
 #  b. Bandung (berjarak 452 km), ongkos kirim per km Rp 4000
 # Data kota tujuan pengiriman
 kota_tujuan = {
-    'surabaya': {'jarak': 169, 'ongkos_per_km': 2500},
-    'bandung': {'jarak': 452, 'ongkos_per_km': 4000}
+    'surabaya': {'jarak': 169, 'ongkos_per_km': 1500},
+    'bandung': {'jarak': 452, 'ongkos_per_km': 2000},
+    'jogja': {'jarak': 349, 'ongkos_per_km': 1500},
+    'jakarta': {'jarak': 532, 'ongkos_per_km': 2500},
+    'malang': {'jarak': 34, 'ongkos_per_km': 500},
+    'bali': {'jarak': 210, 'ongkos_per_km': 2000},
 }
 def hitung_biaya_kirim(jarak, ongkos_per_km):
     return jarak * ongkos_per_km
