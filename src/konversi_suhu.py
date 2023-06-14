@@ -1,68 +1,74 @@
 while True:
+    print("Selamat datang di aplikasi konversi suhu!")
+
     def celsius_to_fahrenheit(celsius):
-        return (celsius * 9/5) + 32
+        return (celsius * 9 / 5) + 32
 
     def fahrenheit_to_celsius(fahrenheit):
-        return (fahrenheit - 32) * 5/9
-
+        return (fahrenheit - 32) * 5 / 9
     def kelvin_to_celsius(kelvin):
         return kelvin - 273.15
-
     def celsius_to_kelvin(celsius):
         return celsius + 273.15
-
     def kelvin_to_fahrenheit(kelvin):
-        celsius = kelvin_to_celsius(kelvin)
-        return celsius_to_fahrenheit(celsius)
-
+        return (kelvin - 273.15) * 9 / 5 + 32
     def fahrenheit_to_kelvin(fahrenheit):
-        celsius = fahrenheit_to_celsius(fahrenheit)
-        return celsius_to_kelvin(celsius)
+        return (fahrenheit - 32) * 5 / 9 + 273.15
 
-    # Menampilkan pilihan konversi suhu
-    print("Pilihan konversi suhu:")
-    print("1. Celsius ke Fahrenheit")
-    print("2. Fahrenheit ke Celsius")
-    print("3. Kelvin ke Celsius")
-    print("4. Celsius ke Kelvin")
-    print("5. Kelvin ke Fahrenheit")
-    print("6. Fahrenheit ke Kelvin")
+    def convert_temperature():
+        print("Konversi Suhu")
+        print("1. Celsius to Fahrenheit")
+        print("2. Fahrenheit to Celsius")
+        print("3. Kelvin to Celsius")
+        print("4. Celsius to Kelvin")
+        print("5. Kelvin to Fahrenheit")
+        print("6. Fahrenheit to Kelvin")
 
-    # Meminta input pilihan konversi
-    pilihan = int(input("Masukkan pilihan konversi: "))
 
-    # Meminta input suhu yang akan dikonversi
-    suhu = float(input("Masukkan suhu: "))
+        option = input("Silahkan pilih konversi yang diinginkan: ")
+        if not option.isdigit():
+            print("Pilihan harus berupa angka!")
+            return
+        else:
+            option = int(option)
+            if option == 1:
+                celsius = float(input("Masukkan suhu dalam Celsius: "))
+                fahrenheit = celsius_to_fahrenheit(celsius)
+                print("Suhu dalam Celsius:", fahrenheit)
+            elif option == 2:
+                fahrenheit = float(input("Masukkan suhu dalam Fahrenheit: "))
+                celsius = fahrenheit_to_celsius(fahrenheit)
+                print("Suhu dalam Celsius:", celsius)
+            elif option == 3:
+                kelvin = float(input("Masukkan suhu dalam Kelvin: "))
+                celsius = kelvin_to_celsius(kelvin)
+                print("Suhu dalam Celsius:", celsius)
+            elif option == 4:
+                celsius = float(input("Masukkan suhu dalam Celsius: "))
+                kelvin = celsius_to_kelvin(celsius)
+                print("Suhu dalam Kelvin:", kelvin)
+            elif option == 5:
+                kelvin = float(input("Masukkan suhu dalam Kelvin: "))
+                fahrenheit = kelvin_to_fahrenheit(kelvin)
+                print("Suhu dalam Fahrenheit:", fahrenheit)
+            elif option == 6:
+                fahrenheit = float(input("Masukkan suhu dalam Fahrenheit: "))
+                kelvin = fahrenheit_to_kelvin(fahrenheit)
+                print("Suhu dalam Kelvin:", kelvin)
+            else:
+                print("Pilihan tidak valid!, silahkan ulangi kembali")
 
-    # Melakukan konversi berdasarkan pilihan pengguna
-    if pilihan == 1:
-        hasil = celsius_to_fahrenheit(suhu)
-        print(f"{suhu} derajat Celsius = {hasil} derajat Fahrenheit")
-    elif pilihan == 2:
-        hasil = fahrenheit_to_celsius(suhu)
-        print(f"{suhu} derajat Fahrenheit = {hasil} derajat Celsius")
-    elif pilihan == 3:
-        hasil = kelvin_to_celsius(suhu)
-        print(f"{suhu} Kelvin = {hasil} derajat Celsius")
-    elif pilihan == 4:
-        hasil = celsius_to_kelvin(suhu)
-        print(f"{suhu} derajat Celsius = {hasil} Kelvin")
-    elif pilihan == 5:
-        hasil = kelvin_to_fahrenheit(suhu)
-        print(f"{suhu} Kelvin = {hasil} derajat Fahrenheit")
-    elif pilihan == 6:
-        hasil = fahrenheit_to_kelvin(suhu)
-        print(f"{suhu} derajat Fahrenheit = {hasil} Kelvin")
-    else:
-        print("Pilihan konversi tidak valid!")
-    
+    convert_temperature()
+
     pilihan = input("\nApakah anda ingin mengulang? (yes/no): ").lower()
     if pilihan == "n" or pilihan == "no":
         print("Terima kasih sudah menggunakan aplikasi ini.")
         break
     elif pilihan == "y" or pilihan == "yes":
+        print("\n\n\n\n")
         continue
     else:
         print("Pilihan Ulangi tidak valid! ")
         print("program telah berakhir")
+        print("Terima kasih sudah menggunakan aplikasi ini.")
         break
