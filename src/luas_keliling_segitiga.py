@@ -1,10 +1,10 @@
 while True:
-    print("Selamat datang di aplikasi cek keliling persegi panjang!")
+    print("Selamat datang di aplikasi cek keliling Segitiga!")
     def cek_keliling():
         print('Menu Cek Keliling dan Luas segitiga')
         print('1. Keliling segitiga')
         print('2. Luas segitiga')
-        print('3. Luas Dan Keliling segitiga')
+        print('3. Luas Dan Keliling segitiga Sama Sisi')
         print('4. Tinggi segitiga')
         print('5. Alas segitiga')
         print('0. Keluar')
@@ -14,18 +14,23 @@ while True:
             return
         pilihan = int(pilihan)
         if pilihan == 1:
-            alas=input("Masukkan alas: ")
-            if not alas.isdigit():
-                print("Alas harus berupa angka!")
+            sisi1=input("Masukkan sisi1: ")
+            if not sisi1.isdigit():
+                print("Sisi1 harus berupa angka!")
                 return
-            tinggi=input("Masukkan tinggi: ")
-            if not tinggi.isdigit():
-                print("Tinggi harus berupa angka!")
+            sisi2=input("Masukkan sisi2: ")
+            if not sisi2.isdigit():
+                print("Sisi2 harus berupa angka!")
                 return
-            alas = int(alas)
-            tinggi = int(tinggi)
-            keliling = alas+alas+alas
-            print("Keliling persegi panjang dengan panjang {} dan lebar {} adalah {}".format(alas, tinggi, keliling))
+            sisi3=input("Masukkan sisi3: ")
+            if not sisi3.isdigit():
+                print("Sisi3 harus berupa angka!")
+                return
+            sisi1 = int(sisi1)
+            sisi2 = int(sisi2)
+            sisi3 = int(sisi3)
+            keliling = sisi1+sisi2+sisi3
+            print("Keliling Segitiga dengan sisi A {}, sisi B {},sisi C {} adalah {}".format(sisi1,sisi2,sisi3,keliling))
             return
         elif pilihan == 2:
             alas= input("Masukkan alas: ")
@@ -39,7 +44,7 @@ while True:
             alas = int(alas)
             tinggi = int(tinggi)
             luas = (alas*0.5) * tinggi
-            print("Luas persegi panjang dengan panjang {} dan lebar {} adalah {}".format(alas, tinggi, luas))
+            print("Luas Segitiga dengan alas {} dan tinggi {} adalah {}".format(alas, tinggi, luas))
             return
         elif pilihan == 3:
             alas=input("Masukkan alas: ")
@@ -54,8 +59,8 @@ while True:
             tinggi = int(tinggi)
             keliling = alas+alas+alas
             luas = (alas*0.5) * tinggi
-            print("Keliling persegi panjang dengan panjang {} dan lebar {} adalah {}".format(alas, tinggi, keliling))
-            print("Luas persegi panjang dengan panjang {} dan lebar {} adalah {}".format(alas, tinggi, luas))
+            print("Keliling Segitiga sama sisi dengan alas {} adalah {}".format(alas, keliling))
+            print("Luas Segitiga sama sisi dengan alas {} dan tinggi {} adalah {}".format(alas, tinggi, luas))
             return
         elif pilihan == 4:
             alas=input("Masukkan alas: ")
