@@ -18,6 +18,7 @@ while True:
     if pilihan == "n" or pilihan == "no":
         print("Terima kasih sudah menggunakan aplikasi ini.")
         break
+        os.chdir('..')
     elif pilihan == "y" or pilihan == "yes":
         print("\n\n\n\n")
         continue

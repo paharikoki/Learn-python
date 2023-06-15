@@ -575,6 +575,7 @@ while True:
     if ulagi == "n" or ulagi == "no":
         print("Terima kasih sudah menggunakan aplikasi ini.")
         break
+        os.chdir('..')
     elif ulagi == "y" or ulagi == "yes":
         print("\n\n\n\n")
         continue
